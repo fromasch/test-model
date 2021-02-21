@@ -1,0 +1,23 @@
+image: 'resources/pics/_DSF1292.jpg'
+
+text: null
+
+en:
+  button:
+    link: 'gallery'
+    text: 'Gallery'
+  h1a: Julian
+  h1b: Kreis
+  h2: Model&nbsp;/&nbsp;Dancer
+  h3: Hallo,
+  text: Lorem ipsum dolor sit amet consectetur adipisicing elit. <br><br> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo accusamus deserunt officiis, sunt atque inventore dignissimos placeat maxime? Eum, omnis! Explicabo quod nesciunt id doloribus dolorum modi temporibus dignissimos fugit! <br><br> Lorem ipsum dolor sit amet consectetur adipisicing elit.  Explicabo, adipisci. <br><br> - Julian <br>
+
+kr:
+  button:
+    link: 'gallery'
+    text: '갤러리'
+  h1a: Julian
+  h1b: Kreis
+  h2: Model&nbsp;/&nbsp;Dancer
+  h3: Hallo,
+  text: Lorem ipsum dolor sit amet consectetur adipisicing elit. <br><br> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo accusamus deserunt officiis, sunt atque inventore dignissimos placeat maxime? Eum, omnis! Explicabo quod nesciunt id doloribus dolorum modi temporibus dignissimos fugit! <br><br> Lorem ipsum dolor sit amet consectetur adipisicing elit.  Explicabo, adipisci. <br><br> - Julian <br>

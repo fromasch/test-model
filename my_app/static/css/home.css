@@ -1,0 +1,123 @@
+
+/* need to redesign all of this!! */
+
+body{
+    --title-margin-left: -111px;
+    --text-padding-left: 20px;
+}
+
+#content .limiter{
+    position: relative;
+    padding: 0;
+}
+
+/* Desktop View */
+@media only screen and (min-width: 600px){
+    .title-image{
+        float: left;
+        width: 50%;
+    }
+
+    #title{
+        margin-top: 150px;
+        margin-left: var(--title-margin-left);
+        display: inline-block;
+        width: 390px;
+    }
+    
+
+    #title h1{
+        margin: 0;
+        width: 100%;
+
+        line-height: 1em;
+        font-size: 5.5em;
+        font-size: 7em;
+        text-align: left;
+    }
+
+    #title h1:last-of-type{
+        float: right;
+        text-align: right;
+    }
+
+    #title h2{
+        float: left;
+        margin-top: 20px;
+        margin-left: calc(var(--title-margin-left) * -1 + var(--text-padding-left));
+        margin-bottom: 0;
+
+        font-size: 1.3em;
+        font-size: 2em;
+        font-weight: 500;
+    }
+
+    .content{
+        float: left;
+        width: 50%;
+        max-width: 400px;
+        padding: 50px var(--text-padding-left);
+    }
+    
+    .button{
+        width: 200px;
+    }
+
+    .content h3{
+        font-weight: 500;
+    }
+
+}
+
+@media only screen and (max-width: 600px){
+    .title-image{
+        width: 100%;
+    }
+
+    #title{
+        position: absolute;
+        top: -35px;
+        width: 100%;
+
+        padding: 0 10%;
+    }
+
+    #title h1{
+        margin: 0;
+        width: 100%;
+
+        line-height: 0.9;
+        font-size: 5.5em;
+        font-size: 23vw;
+        text-align: left;
+    }
+
+    #title h1:last-of-type{
+        float: right;
+        text-align: right;
+    }
+
+    #title h2{
+        float: left;
+        margin-top: 20px;
+
+        font-size: 1.3em;
+        font-weight: 500;
+    }
+
+    .button{
+        /* margin: 20px 5%;
+        width: 90%; */
+        margin: 20px 0;
+    }
+
+    .content{
+        padding: 0 var(--padding);
+        padding: 0 20px;
+    }
+
+    .content h3{
+        font-size: 1.5em;
+        font-weight: 500;
+    }
+}

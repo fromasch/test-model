@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>KM | {{current_page}}</title>
+	<meta name="theme-color" content="#111111">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="{{ url_for('static', filename= 'css/layout.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename= 'css/elements/button.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename= 'css/elements/tag.css') }}">
+
+	<!-- File specific Header Options -->
+	{% block head %}
+	{% endblock %}
+
+	<!-- Icon Font -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+	<!-- AJAX -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	
+	<!-- Viewport -->
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+	<!-- <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> -->
+	<!-- <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1"> -->
+
+	<!-- Favicons -->
+	{% include 'favicons.html' %}
+</head>
+
+<body class='{{lang}}'>
+	<div id="header" class="limiter-parent">
+		<div class="limiter">
+			<a href="/{{lang}}/home" id="logo"></a>
+			<nav id="hamburger">
+				<p></p>
+				<p></p>
+				<p></p>
+			</nav>
+			<div id="menu">
+				<div>
+					{% for page in pages %}
+						{% if page[1] == current_page.lower() %}
+					<a href="/{{lang}}/{{page[1]}}" class="active no-highlight">{{page[0]}}</a>
+						{% else %}
+					<a href="/{{lang}}/{{page[1]}}" class="no-highlight">{{page[0]}}</a>
+						{% endif %}
+					{% endfor %}
+					<!-- <a href="/contact">Contact</a>
+					<a href="/compcard">Comp Card</a>
+					<a href="/portfolio">Portfolio</a>
+					<a href="/gallery">Gallery</a>
+					<a href="/home" class="active">Home</a> -->
+				</div>
+			</div>
+		</div>
+	</div>
+		
+	<div class="limiter-parent" id="lang-bubble-limiter">
+		<div class="limiter">
+			{% if lang == 'en' %}
+			<a href='{{ request.path.replace("en", "kr", 1) }}' id="lang-bubble" class="kr">한국어</a>
+			{% else %}
+			<a href='{{ request.path.replace("kr", "en", 1) }}' id="lang-bubble" class="en">English</a>
+			{% endif %}
+		</div>
+	</div>
+		
+	
+	<div id="content" class="limiter-parent">
+		<div class="limiter">
+			{% block content%}
+			{% endblock %}
+		</div>
+	</div>
+
+	<div id="footer">
+		© Julian William Kreis
+	</div>
+</body>
+
+<script type="text/javascript">
+	// Menu Toggler
+	var menuButton = document.querySelector("#hamburger");
+	var menu = document.querySelector("#menu");
+	var menuHeight = menu.clientHeight;
+	var isMenuToggled = false;
+	var headerHeight = document.querySelector("#header").clientHeight;
+
+	function toggleMenu(){
+		if (isMenuToggled){
+			menu.style.top = '-' + menuHeight + 'px';
+			isMenuToggled = false;
+		}else{
+			menu.style.top = headerHeight + 'px';
+			isMenuToggled = true;
+		}
+	}
+
+	// toggleLangMenu();
+	menuButton.addEventListener("click", toggleMenu);
+</script>
+
+{% block scripts%}
+{% endblock %}
+
+</html>

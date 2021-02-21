@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400&display=swap');
+
+:root{
+	--padding: 10px;
+	--header-height: 70px;
+	--footer-height: 30px;
+	--content-max-width: 1000px;
+	--content-padding: 60px;
+	--limiter-width: 1200px;
+
+	--light-color: #F2F2F2;
+	--dark-color: #111;
+	--accent-color: coral;
+	--subtle-color: #555555;
+}
+
+html{
+	scroll-behavior: smooth;
+}
+
+body{
+	margin: 0;
+
+	background-color: red;
+	background-color: var(--dark-color);
+	color: var(--dark-color);
+}
+
+*{
+	box-sizing: border-box;
+}
+
+.kr{
+	font-family: 'Noto Sans KR';
+}
+
+.en{
+	font-family: 'Roboto', serif;
+}
+
+.no-highlight{
+    /* removing blue highlight when clicked on mobile */
+	-webkit-tap-highlight-color: transparent;
+}
+
+#content{
+	/* min-height: calc(100vh - var(--header-height)); */
+	min-height: calc(100vh - var(--footer-height));
+
+	padding-top: calc(var(--header-height) + 50px);
+
+	background-color: var(--light-color);
+}
+
+.limiter{
+	width: 100%;
+	max-width: var(--limiter-width);
+	height: 100%;
+	/* background-color: blue; */
+
+	padding: 0 var(--padding);
+}
+
+.limiter-parent{
+	display: flex;
+	justify-content: center;
+}
+
+#header{
+	position: fixed;
+	z-index: 10;
+	width: 100%;
+	height: var(--header-height);
+
+	/* padding: 0 var(--padding); */
+	/* padding-left: var(--padding); */
+	background-color: var(--dark-color);
+}
+
+#logo{
+	width: 100px;
+	height: 100%;
+	/*margin-left: var(--padding);*/
+	margin: 0;
+	float: left;
+
+	/* background: url(../resources/logo/km_logo_tiny.png) no-repeat center; */
+	background: url(../resources/logo/km_logo_medium.png) no-repeat center;
+	background-size: contain;
+}
+
+#menu a:hover{
+	color: var(--accent-color);
+}
+
+#menu .active{
+	color: var(--accent-color);
+}
+
+#footer{
+	line-height: var(--footer-height);
+
+	color: var(--light-color);
+	font-size: 0.8em;
+	text-align: center;
+	background-color: var(--dark-color);
+}
+
+#lang-bubble-limiter{
+	position: fixed;
+	width: 100%;
+	z-index: 8;
+}
+
+#lang-bubble{
+	/* display: inline-block; */
+	float: right;
+	margin-top: calc(var(--header-height) + 7px);
+	margin-right: var(--padding);
+
+	background-color: var(--accent-color);
+	/* padding: 8px 20px; */
+	padding: 0 20px;
+	line-height: 35px;
+	border-radius: 100px;
+
+	font-size: 0.8em;
+	color: white;
+	text-decoration: none;
+}
+
+#lang-bubble:hover{
+	cursor: pointer;
+}
+
+/* Desktop View */
+@media only screen and (min-width: 600px){
+	#content .limiter{
+		padding: 0 100px;
+	}
+
+	#hamburger{
+		display: none;
+	}
+
+	#menu{
+		float: right;
+	}
+
+	#menu a{
+		margin-right: var(--padding); 
+		line-height: var(--header-height);
+
+		color: var(--light-color);
+		text-decoration: none;
+		border: none;
+		cursor: pointer;
+	}
+}
+
+/* Mobile View */
+@media only screen and (max-width: 600px){
+	#content .limiter{
+		padding: 0 var(--padding);
+	}
+
+	#hamburger{
+		display: flex;
+		float: right;
+		height: 100%;
+		width: calc(var(--header-height) - 5px);
+
+		cursor: pointer;
+		flex-direction: column;
+		justify-content: space-between;
+		padding: 23px;
+		padding-right: var(--padding);
+
+		/* width: var(--header-height); */
+		/* padding: 23px 20px; */
+	}
+
+	#hamburger p{
+		margin: 0;
+		height: 2px;
+		background-color: white;
+	}
+
+	#menu{
+		position: fixed;
+		left: 0;
+		top: calc(-100vh - var(--header-height));
+		/* top: var(--header-height); */
+		width: 100%;
+		height: calc(100vh - var(--header-height));
+		z-index: -1;
+
+		padding-top: var(--content-padding);
+		background-color: var(--dark-color);
+		transition: 0.25s;
+	}
+
+	#menu div{
+		display: flex;
+		height: 50%;
+
+		justify-content: space-between;
+		flex-direction: column;
+		/* flex-direction: column-reverse; */
+		text-align: center;
+	}
+
+	#menu a{
+		display: block;
+
+		color: var(--light-color);
+		text-decoration: none;
+		border: none;
+		cursor: pointer;
+		/* line-height: var(--header-height); */
+		/* font-size: 1.4em; */
+	}
+}

@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block head %}
+	<link rel="stylesheet" href="{{ url_for('static', filename= 'css/home.css') }}">
+{% endblock %}
+
+{% block content%}
+	<!-- need to redesign all of this -->
+	<img class="title-image" src="{{ url_for('static', filename=data['image']) }}">
+	<div id="title" class="en">
+		<h1 class='en'>{{data['text']['h1a'] | safe}}</h1>
+		<h1>{{data['text']['h1b'] | safe}}</h1>
+		<h2>{{data['text']['h2'] | safe}}</h2>
+	</div>
+
+	<div class="content">
+		<h3>{{data['text']['h3'] | safe}}</h3>
+		<!-- <p>
+			I'm a model and dancer living in Seoul, South Korea! <br><br>
+			I'm a creative by nature and I've allways been looking for
+			new and exiting things to try and so I discovered modelling.
+			What was once just a hobby is now my full time job. <br><br>
+			I'm looking forwards to work with you on exiting and 
+			creative projects! <br><br>
+			- Julian
+		</p> -->
+		<p>{{data['text']['text'] | safe}}</p>
+		<a href="{{data['text']['button']['link']}}" class="button">{{data['text']['button']['text']}} <span class="material-icons">keyboard_arrow_right</span></a>
+
+	</div>
+{% endblock %}

@@ -1,0 +1,36 @@
+en:
+  - - 'Home'
+    - home
+
+  - - 'Gallery'
+    - gallery
+
+  - - 'Portfolio'
+    - portfolio
+
+  - - 'CompCard'
+    - compcard
+
+  - - 'About'
+    - about
+
+  - - 'Booking'
+    - booking
+kr:
+  - - '홈'
+    - home
+
+  - - '갤러리'
+    - gallery
+
+  - - '포트폴리오'
+    - portfolio
+
+  - - '컴카드'
+    - compcard
+
+  - - '상세'
+    - about
+
+  - - '문의'
+    - booking
